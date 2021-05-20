@@ -150,6 +150,41 @@ class HomeController extends Controller
     }
 
 
+    // PROSES TAMBAH DATA BLOG 
+     public function prosestambahblogs(Request $request)
+    {
+         $this->validate($request, [
+            'gambar'     => 'required|image|mimes:png,jpg,jpeg',
+            'judul'     => 'required',
+            'deskripsi'   => 'required'
+        ]);
+
+        //upload image
+        $blogs = new Blogs();
+        $blogs->judul = $request->get('judul');
+        $blogs->deskripsi = $request->get('deskripsi');
+        
+        if ($request->hasFile('gambar')) {
+            // $post->delete_image();
+            $gambar = $request->file('gambar');
+            // echo $photo_profile;exit;
+            $name = rand(1000, 9999) . $gambar->getClientOriginalName();
+            $gambar->move('img', $name);
+            $blogs->gambar = $name;
+        }
+        $blogs->save();
+
+
+        // dd($blogs);
+        if($blogs){
+            //redirect dengan pesan sukses
+            return redirect()->route('home.prosestambahblogs')->with(['success' => 'Data Berhasil Disimpan!']);
+        }else{
+            //redirect dengan pesan error
+            return redirect()->route('home.prosestambahblogs')->with(['error' => 'Data Gagal Disimpan!']);
+        }
+    }
+
     // PROSES EDIT
     public function hapusDataBlog($id)
     {

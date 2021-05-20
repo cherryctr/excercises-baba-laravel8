@@ -30,6 +30,8 @@ Route::get('/add/blog', [App\Http\Controllers\HomeController::class, 'tambahData
 
 Route::post('/post/blog', [App\Http\Controllers\HomeController::class, 'prosestambahblog'])->name('home.prosestambahblog');
 
+Route::post('/post/blog', [App\Http\Controllers\HomeController::class, 'prosestambahblogs'])->name('home.prosestambahblogs');
+
 Route::get('/blog/hapus/{id}',[App\Http\Controllers\HomeController::class, 'hapusDataBlog'])->name('hapusdatablog');
 
 Route::get('/blog/edit/{id}',[App\Http\Controllers\HomeController::class, 'editDataBlog'])->name('updatedatablog');
