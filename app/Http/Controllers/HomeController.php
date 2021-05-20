@@ -127,7 +127,7 @@ class HomeController extends Controller
         $blogs = new Blogs();
         $blogs->judul = $request->get('judul');
         $blogs->deskripsi = $request->get('deskripsi');
-       
+        
         if ($request->hasFile('gambar')) {
             // $post->delete_image();
             $gambar = $request->file('gambar');
@@ -169,7 +169,7 @@ class HomeController extends Controller
     public function updateDataBlog(Request $request, $id)
     {
          $this->validate($request, [
-            'gambar'     => 'required|image|mimes:png,jpg,jpeg',
+            'gambar'     => 'image|mimes:png,jpg,jpeg',
             'judul'     => 'required',
             'deskripsi'   => 'required'
         ]);
@@ -177,10 +177,16 @@ class HomeController extends Controller
         $blogs = Blogs::findOrFail($id);
         $blogs->judul = $request->get('judul');
         $blogs->deskripsi = $request->get('deskripsi');
-       
+        
+
         if ($request->hasFile('gambar')) {
             // $post->delete_image();
-            $gambar = $request->file('gambar');
+           
+            if($request->file('gambar') == ""){
+                $gambar = $request->file('gambar_old');
+            }else{
+                 $gambar = $request->file('gambar');
+            }
             // echo $photo_profile;exit;
             $name = rand(1000, 9999) . $gambar->getClientOriginalName();
             $gambar->move('img', $name);
@@ -192,10 +198,10 @@ class HomeController extends Controller
         // dd($blogs);
         if($blogs){
             //redirect dengan pesan sukses
-            return redirect()->route('home')->with(['success' => 'Data Berhasil Disimpan!']);
+            return redirect()->route('home')->with(['success' => 'Data Berhasil DiUpdate!']);
         }else{
             //redirect dengan pesan error
-            return redirect()->route('home')->with(['error' => 'Data Gagal Disimpan!']);
+            return redirect()->route('home')->with(['error' => 'Data Gagal DiUpdate!']);
         }
     }
 }

@@ -21,10 +21,12 @@
                                 <div class="checkbox">
                                     <label>
                                         <input name="remember" type="checkbox" value="Remember Me">Remember Me
-                                    </label>
+                                    </label><br>
+                                     <a href="{{ route('register') }}" style="color: red;">Klik disini untuk mendaftar</a>
                                 </div>
                                 <!-- Change this to a button or input when using this as a form -->
-                                <button type="submit" class="btn btn-lg btn-success btn-block">Register</button>
+
+                                <button type="submit" class="btn btn-lg btn-success btn-block">Login</button>
                             </fieldset>
                         </form>
                     </div>
