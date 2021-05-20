@@ -127,7 +127,7 @@
 
                        <img src="{{ asset('img/'. $blogs->gambar ) }}" class="img-responsive" style="width: 250px; height: 100px;">
                        <br>
-                       <input type="hideen" name="gambar_old" value="{{ $blogs->gambar }}">
+                       <input type="hidden" name="gambar_old" value="{{ $blogs->gambar }}">
                         <label for="exampleFormControlFile1">Upload Gambar</label>
                         <input type="file" name="gambar" class="form-control-file" id="exampleFormControlFile1">
                         <span>Klik untuk ganti gambar</span><br>
