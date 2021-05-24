@@ -24,19 +24,23 @@
             <!-- /.row -->
             <div class="row">
                 <div class="col-lg-8">
-                    <form action="{{ url('/post/blog') }}" method="POST" enctype="multipart/form-data">
+                    <form action="{{ url('/add/post/slider') }}" method="POST" enctype="multipart/form-data">
                     @csrf
                       <div class="form-group">
                         <label for="exampleInputEmail1">Judul</label>
-                        <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-                     
-                      </div>
-
-                       <div class="form-group">
-                        <label for="exampleInputEmail1">Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" name="wysiwyg-editor"></textarea>
-                     
+                        <input type="text" name="judul" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Tambah Judul">
                         </div>
+                     
+                        <div class="form-group">
+                          <label for="sel1"> Status </label>
+                          <select name="status" class="form-control" id="sel1">
+                            <option>--  PILIH STATUS --</option>
+                            <option value="0">Aktif</option>
+                            <option value="1">Non-Aktif</option>
+                            
+                          </select>
+                        </div>
+
 
                        <div class="form-group">
                         <label for="exampleFormControlFile1">Upload Gambar</label>

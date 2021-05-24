@@ -5,13 +5,13 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-            @include('features.navbar-section')
+            
+            <!-- /.navbar-header -->
+
+          @include('features.navbar-section')
             <!-- /.navbar-top-links -->
 
             @include('features.navbar-side')
-            <!-- /.navbar-top-links -->
-
-            
             <!-- /.navbar-static-side -->
         </nav>
 

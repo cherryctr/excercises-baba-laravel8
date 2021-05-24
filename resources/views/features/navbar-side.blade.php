@@ -17,7 +17,7 @@
                                     <a href="{{ url('/admin/blog') }}"><i class="fa fa-arrow-circle-right"></i> &nbsp;Blogs & News</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-arrow-circle-right"></i> &nbsp;Slider</a>
+                                    <a href="{{ url('/admin/slider') }}"><i class="fa fa-arrow-circle-right"></i> &nbsp;Slider</a>
                                 </li>
                                 <li>
                                     <a href="#"><i class="fa fa-arrow-circle-right"></i> &nbsp;teruskan isi</a>

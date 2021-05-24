@@ -26,7 +26,7 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 // DATA BLOG 
 Route::get('/admin/blog', [App\Http\Controllers\HomeController::class, 'indextwo'])->name('indexblog');
 
-Route::get('/add/blog', [App\Http\Controllers\HomeController::class, 'tambahDataProduk'])->name('adddatablog');
+Route::get('/add/blog', [App\Http\Controllers\HomeController::class, 'tambahDataBlog'])->name('adddatablog');
 
 Route::post('/post/blog', [App\Http\Controllers\HomeController::class, 'prosestambahblog'])->name('home.prosestambahblog');
 
@@ -37,6 +37,26 @@ Route::get('/blog/hapus/{id}',[App\Http\Controllers\HomeController::class, 'hapu
 Route::get('/blog/edit/{id}',[App\Http\Controllers\HomeController::class, 'editDataBlog'])->name('updatedatablog');
 
 Route::post('/blog/proses/edit/{id}',[App\Http\Controllers\HomeController::class, 'updateDataBlog'])->name('updatedatablogs');
+
+
+
+
+
+
+
+// ROUTE SLIDER
+
+Route::get('/admin/slider', [App\Http\Controllers\HomeController::class, 'indexSlider'])->name('indexslider');
+Route::get('/add/slider', [App\Http\Controllers\HomeController::class, 'tambahDataSlider'])->name('adddataslider');
+Route::post('/add/post/slider', [App\Http\Controllers\HomeController::class, 'prosestambahslider'])->name('postdataslider');
+Route::get('/slider/hapus/{id}',[App\Http\Controllers\HomeController::class, 'hapusDataSlider'])->name('hapusdataslider');
+
+Route::get('/slider/edit/{id}',[App\Http\Controllers\HomeController::class, 'editDataSliders'])->name('updatedataslider');
+Route::post('/slider/proses/edit/{id}',[App\Http\Controllers\HomeController::class, 'updateDataSlider'])->name('editdataSlider');
+
+
+
+
 
 
 
