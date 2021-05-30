@@ -5,13 +5,13 @@
 
         <!-- Navigation -->
         <nav class="navbar navbar-default navbar-static-top" role="navigation" style="margin-bottom: 0">
-         @include('features.navbar-section')
+            @include('features.navbar-section')
             <!-- /.navbar-top-links -->
 
             @include('features.navbar-side')
             <!-- /.navbar-top-links -->
 
-           
+            
             <!-- /.navbar-static-side -->
         </nav>
 
@@ -29,13 +29,13 @@
                 <div class="col-lg-8">
                     <div class="panel panel-default">
                         <div class="panel-heading">
-                            <i class="fa fa-table fa-fw"></i> Slider 
+                            <i class="fa fa-table fa-fw"></i> Produk 
                         </div>
                         <!-- /.panel-heading -->
                         <div class="panel-body">
 
                             <!-- BUTTON TAMBAH  -->
-                            <a href="{{ url('add/slider') }}" class="btn btn-success mb-4"> Tambah
+                            <a href="{{ url('add/produk') }}" class="btn btn-success mb-4"> Tambah
                             </a>  
                             <br>
                             <br>
@@ -46,36 +46,29 @@
                                             <th>No</th>
                                             <th>Judul</th>
                                             <th>Gambar</th>
-                                            <th>Status</th>
+                                            <th>Diskon</th>
+                                            <th>Price</th>
+                                            <th>Deskripsi</th>
                                             <th>Action</th>
                                             
                                         </tr>
                                     </thead>
                                     <tbody>
                                       <?php $i=1; ?>    
-                                    @foreach($sliders as $slider) 
+                                    @foreach($products as $product) 
                                    
                                         <tr>
                                             <td>{{ $i }}</td>
-                                             <td>{{ $slider->judul }}</td>
+                                             <td>{{ $product->judul }}</td>
                                             <!-- <td>{{ $slider->status }}</td> -->
-                                            <td><img src="{{ asset('img/'. $slider->gambar ) }}" class="img-responsive" style="width: 250px; height: 100px;"></td>
+                                            <td><img src="{{ asset('img/'. $product->gambar ) }}" class="img-responsive" style="width: 250px; height: 100px;"></td>
                                             
 
-                                           @if($slider->status == 0)
-                                           <td>
-                                                <span class="label label-success">Aktif</span>
-                                            </td>
-                                            @elseif($slider->status == 1)
                                             <td>
-                                                <span class="label label-danger">Non-Aktif</span>
-                                            </td>
-                                            @endif
-                                            <td>
-                                                <a href="{{ url('/slider/edit/' . $slider->id) }}" class="btn btn-primary mb-4"> Edit
+                                                <a href="{{ url('/slider/edit/' . $product->id) }}" class="btn btn-primary mb-4"> Edit
                                                 </a>
 
-                                                <a href="{{ url('/slider/hapus/' . $slider->id) }}" class="btn btn-danger mb-4"> Hapus
+                                                <a href="{{ url('/slider/hapus/' . $product->id) }}" class="btn btn-danger mb-4"> Hapus
                                                 </a>    
                                             </td>
                                             

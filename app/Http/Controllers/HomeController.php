@@ -63,6 +63,49 @@ class HomeController extends Controller
     }
 
 
+    public function indexProduk()
+    {
+        
+        $sliders = Sliders::All();
+        // Untuk mengambil Data dari database berdasarkan status 0 / aktif
+        $slider = Sliders::where('status','=','0');
+        // Untuk menghitung Jumlah status 0/aktif
+        $slider_count = $slider->count();
+
+
+        // Untuk mengambil Data dari Blogs
+        $blogs = Blogs::All();
+        // Untuk menghitung Jumlah Blogs
+        $blogs_count = $blogs->count();
+
+        // Untuk mengambil Data Produk dari database 
+        $products = Products::All();
+        // Untuk menghitung Jumlah Produk dari database 
+        $products_count = $products->count();
+
+         // Untuk mengambil Data User dari database 
+        $user = User::All();
+        // Untuk menghitung Jumlah User dari database 
+        $user_count = $user->count();
+
+        
+        
+        return view('layouts.content.produk.index',compact(
+            'slider','slider_count','sliders',
+            'blogs' , 'blogs_count',
+            'products','products_count',
+            'user','user_count'
+
+        ));
+    }
+
+
+    public function tambahDataProduk()
+    { 
+        return view('layouts.content.produk.add');
+    }
+
+
     public function indexSlider()
     {
         

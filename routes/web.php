@@ -56,6 +56,13 @@ Route::post('/slider/proses/edit/{id}',[App\Http\Controllers\HomeController::cla
 
 
 
+// ROUTE PRODUK
+Route::get('/admin/produk', [App\Http\Controllers\HomeController::class, 'indexProduk'])->name('indexProduk');
+
+Route::get('/add/produk', [App\Http\Controllers\HomeController::class, 'tambahDataProduk'])->name('adddataproduk');
+
+
+
 
 
 

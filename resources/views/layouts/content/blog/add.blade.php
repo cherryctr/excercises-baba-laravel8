@@ -34,7 +34,7 @@
 
                        <div class="form-group">
                         <label for="exampleInputEmail1">Deskripsi</label>
-                        <textarea name="deskripsi" class="form-control" name="wysiwyg-editor"></textarea>
+                        <textarea name="deskripsi" class="form-control" placeholder="Isi Disini"></textarea>
                      
                         </div>
 

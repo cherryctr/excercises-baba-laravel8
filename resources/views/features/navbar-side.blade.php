@@ -20,7 +20,7 @@
                                     <a href="{{ url('/admin/slider') }}"><i class="fa fa-arrow-circle-right"></i> &nbsp;Slider</a>
                                 </li>
                                 <li>
-                                    <a href="#"><i class="fa fa-arrow-circle-right"></i> &nbsp;teruskan isi</a>
+                                    <a href="{{ url('/admin/produk') }}"><i class="fa fa-arrow-circle-right"></i> &nbsp;Produk</a>
                                 </li>                                
                             </ul>
                             <!-- /.nav-second-level -->
